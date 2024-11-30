@@ -85,40 +85,42 @@ export function Warranty() {
   }
 
   return (
-    <Container className="px-5 md:px-20 ">
-      <PageTitle title="Гарантия" />
-      <div className="flex flex-col py-10">
-        {/* Breadcrumb */}
-        <div className="flex items-center gap-2 mb-6 text-md font-semibold">
-          <Link to="/" className="text-gray-500 hover:text-[#FAC612]">
-            Главная
-          </Link>
-          <span className="text-gray-500">›</span>
-          <span className="text-black">Гарантия</span>
-        </div>
+    <main className="bg-zinc-100 w-full pb-20">
+      <Container className="px-5 md:px-20 ">
+        <PageTitle title="Гарантия" />
+        <div className="flex flex-col py-10">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 mb-6 text-md font-semibold">
+            <Link to="/" className="text-gray-500 hover:text-[#FAC612]">
+              Главная
+            </Link>
+            <span className="text-gray-500">›</span>
+            <span className="text-black">Гарантия</span>
+          </div>
 
-        {/* Title */}
-        <SectionTitle
-          title="ГАРАНТИЯ"
-          iconSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/e4fa9175160bd5796990f118f9c3251851affd2452bef799bf95c867fe82afc4?placeholderIfAbsent=true&apiKey=828c60f7e991488dbfb456f118122881"
-        />
+          {/* Title */}
+          <SectionTitle
+            title="ГАРАНТИЯ"
+            iconSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/e4fa9175160bd5796990f118f9c3251851affd2452bef799bf95c867fe82afc4?placeholderIfAbsent=true&apiKey=828c60f7e991488dbfb456f118122881"
+          />
 
-        {/* Questions */}
-        <div className="mt-10">
-          {questions.map((item) => (
-            <WarrantyQuestion
-              key={item.id}
-              question={item.question}
-              answer={item.answer}
-              isOpen={openQuestion === item.id}
-              onClick={() =>
-                setOpenQuestion(openQuestion === item.id ? null : item.id)
-              }
-            />
-          ))}
+          {/* Questions */}
+          <div className="mt-10">
+            {questions.map((item) => (
+              <WarrantyQuestion
+                key={item.id}
+                question={item.question}
+                answer={item.answer}
+                isOpen={openQuestion === item.id}
+                onClick={() =>
+                  setOpenQuestion(openQuestion === item.id ? null : item.id)
+                }
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </main>
   );
 }
 

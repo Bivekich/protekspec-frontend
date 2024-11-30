@@ -114,7 +114,7 @@ export function OrderCallPopup({ isOpen, onClose }) {
                   placeholder="Введите ваше имя"
                   required
                   disabled={isSubmitting}
-                  className="overflow-hidden px-3.5 py-4 mt-2.5 w-full text-base font-light border-b border-[#FAC612] bg-transparent text-[#828282] placeholder:text-base focus:outline-none"
+                  className="overflow-hidden px-3.5 py-4 mt-2.5 w-full text-base font-light border-b border-[#FAC612] bg-transparent text-[#828282] placeholder:text-base md:placeholder:text-xl focus:outline-none"
                 />
               </div>
               <div className="flex flex-col">
@@ -129,7 +129,7 @@ export function OrderCallPopup({ isOpen, onClose }) {
                   placeholder="+7 999 999 99 99"
                   required
                   disabled={isSubmitting}
-                  className="overflow-hidden px-3.5 py-4 mt-2.5 w-full text-base font-light border-b border-[#FAC612] bg-transparent text-[#828282] placeholder:text-base"
+                  className="overflow-hidden px-3.5 py-4 mt-2.5 w-full text-base font-light border-b border-[#FAC612] bg-transparent text-[#828282] placeholder:text-base md:placeholder:text-xl focus:outline-none"
                 />
               </div>
             </div>
@@ -144,16 +144,16 @@ export function OrderCallPopup({ isOpen, onClose }) {
                 onChange={handleChange}
                 placeholder="Оставьте ваши пожелания"
                 disabled={isSubmitting}
-                className="overflow-hidden px-3.5 py-4 mt-2.5 w-full text-base font-light border-b border-[#FAC612] min-h-[50px] text-[#828282] placeholder:text-base resize-none focus:outline-none"
+                className="overflow-hidden px-3.5 py-4 mt-2.5 w-full text-base font-light border-b border-[#FAC612] min-h-[50px] text-[#828282] placeholder:text-base resize-none md:placeholder:text-xl focus:outline-none"
                 rows={3}
               />
             </div>
 
-            <p className="mt-3 md:mt-5 text-xs md:text-base text-[#1A1A1A]">
-              Нажимая кнопку &quot;Отправить&quot; вы соглашаетесь с{" "}
+            <p className="mt-3 md:mt-5 text-base md:text-lg text-[#1A1A1A] text-center">
+              Нажимая кнопку &quot;Отправить&quot; вы соглашаетесь с <br></br>
               <Link
                 to="/userpolicy"
-                className="italic underline hover:text-black/80"
+                className="italic underline hover:text-[#FAC612]"
               >
                 политикой конфиденциальности
               </Link>

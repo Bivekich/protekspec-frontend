@@ -57,7 +57,7 @@ export function PolicySection() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="flex flex-col bg-white w-full relative overflow-hidden pb-[100px]"
+      className="flex flex-col bg-zinc-100 w-full relative overflow-hidden pb-[100px]"
     >
       <PageTitle title="Пользовательское соглашение" />
       <Container className="px-5 md:px-20 pt-5">

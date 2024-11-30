@@ -1,37 +1,11 @@
-import { useEffect, useState } from "react";
+import { useData } from "../../context/DataContext";
 import { HeroSection } from "./HeroSection";
-import { getHero } from "../../services/api";
 
 export const MainHero = () => {
-  const [heroData, setHeroData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { globalData } = useData();
+  const heroData = globalData.hero;
 
-  useEffect(() => {
-    const fetchHeroData = async () => {
-      try {
-        const data = await getHero();
-        if (data?.data?.[0]) {
-          setHeroData(data.data[0]);
-        } else {
-          setError("No hero data found");
-        }
-      } catch (error) {
-        console.error("Error fetching hero data:", error);
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchHeroData();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error || !heroData) {
+  if (!heroData) {
     return (
       <HeroSection
         title="Прямые поставки запчастей из Европы от всех известных мировых брендов"

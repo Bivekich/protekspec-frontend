@@ -86,76 +86,78 @@ export function ContactInfo() {
   }
 
   return (
-    <Container className="px-5 md:px-20">
-      <PageTitle title="Контакты" />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="flex flex-col py-10"
-      >
-        {/* Breadcrumb */}
+    <main className="bg-zinc-100 w-full pb-20">
+      <Container className="px-5 md:px-20">
+        <PageTitle title="Контакты" />
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center gap-2 mb-6 text-md font-semibold"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col py-10"
         >
-          <Link to="/" className="text-gray-500 hover:text-[#FAC612]">
-            Главная
-          </Link>
-          <span className="text-gray-500">›</span>
-          <span className="text-black">Контакты</span>
-        </motion.div>
-
-        {/* Title */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <SectionTitle
-            title="Контакты"
-            iconSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/e4fa9175160bd5796990f118f9c3251851affd2452bef799bf95c867fe82afc4"
-          />
-        </motion.div>
-
-        {/* Content */}
-        <div className="flex flex-col lg:flex-row justify-between mt-10 gap-10 lg:gap-0">
-          {/* Left Column */}
+          {/* Breadcrumb */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex-1"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex items-center gap-2 mb-6 text-md font-semibold"
           >
-            <div className="flex flex-col lg:flex-row gap-6">
-              <ContactBlock data={contactBlockData} />
-              <div className="hidden lg:block w-[1px] h-auto bg-[#1A1A1A]" />
-              <LegalBlock data={legalData} />
-            </div>
+            <Link to="/" className="text-gray-500 hover:text-[#FAC612]">
+              Главная
+            </Link>
+            <span className="text-gray-500">›</span>
+            <span className="text-black">Контакты</span>
           </motion.div>
 
-          {/* Right Column - Map */}
+          {/* Title */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex-1 max-w-full lg:max-w-[600px] h-[350px]"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <iframe
-              src={
-                contactData?.MapUrl ||
-                "https://yandex.ru/map-widget/v1/?um=constructor%3Abe4f7fa3a7abc5fbd66b83e2ee96f599e36449c6263a532d7d9391f89d3f42d3&amp;source=constructor"
-              }
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              className="rounded-lg shadow-lg"
+            <SectionTitle
+              title="Контакты"
+              iconSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/e4fa9175160bd5796990f118f9c3251851affd2452bef799bf95c867fe82afc4"
             />
           </motion.div>
-        </div>
-      </motion.div>
-    </Container>
+
+          {/* Content */}
+          <div className="flex flex-col lg:flex-row justify-between mt-10 gap-10 lg:gap-0">
+            {/* Left Column */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex-1"
+            >
+              <div className="flex flex-col lg:flex-row gap-6">
+                <ContactBlock data={contactBlockData} />
+                <div className="hidden lg:block w-[1px] h-auto bg-[#1A1A1A]" />
+                <LegalBlock data={legalData} />
+              </div>
+            </motion.div>
+
+            {/* Right Column - Map */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex-1 max-w-full lg:max-w-[600px] h-[350px]"
+            >
+              <iframe
+                src={
+                  contactData?.MapUrl ||
+                  "https://yandex.ru/map-widget/v1/?um=constructor%3Abe4f7fa3a7abc5fbd66b83e2ee96f599e36449c6263a532d7d9391f89d3f42d3&amp;source=constructor"
+                }
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                className="rounded-lg shadow-lg"
+              />
+            </motion.div>
+          </div>
+        </motion.div>
+      </Container>
+    </main>
   );
 }

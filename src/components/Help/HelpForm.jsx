@@ -105,7 +105,7 @@ function HelpForm() {
   };
 
   return (
-    <main className="bg-[#1A1A1A] w-full relative overflow-hidden py-10">
+    <main className="bg-[#1A1A1A] w-full relative overflow-hidden py-10 ">
       <Container className="relative">
         {/* Animated Background - adjust arrows for mobile */}
         <div className="absolute inset-0 w-full h-full">
@@ -211,7 +211,7 @@ function HelpForm() {
                     value={formData.comment}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="overflow-hidden gap-2.5 self-stretch px-3.5 py-4 mt-2.5 w-full text-sm font-light border-b border-solid border-b-[#FAC612] min-h-[50px] text-[#828282] bg-transparent placeholder:text-[#828282] max-md:max-w-full"
+                    className="overflow-hidden gap-2.5 focus:outline-none self-stretch px-3.5 py-4 mt-2.5 w-full text-sm font-light border-b border-solid border-b-[#FAC612] min-h-[50px] text-[#828282] bg-transparent placeholder:text-[#828282] max-md:max-w-full"
                     placeholder="Оставьте свои комментарии"
                   />
                 </div>

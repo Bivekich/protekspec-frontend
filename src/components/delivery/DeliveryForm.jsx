@@ -1,29 +1,31 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Container } from "../common/Container";
 import FormInput from "../Contact/FormInput";
 import { submitContactForm } from "../../services/api";
+import { Link } from "react-router-dom";
 
 const formFields = [
   {
     label: "Имя",
+    name: "name",
     placeholder: "Введите ваше имя",
     required: false,
   },
   {
     label: "Номер телефона",
+    name: "phone",
     placeholder: "+7 999 999 99 99",
     required: true,
   },
 ];
 
-export function AnswerNotFound() {
+export function DeliveryForm() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     comment: "",
-    source: "answer_not_found",
+    source: "delivery_page",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -43,7 +45,7 @@ export function AnswerNotFound() {
         name: formData.name,
         phone: formData.phone,
         comment: formData.comment,
-        source: "answer_not_found",
+        source: "delivery_page",
       });
 
       // Reset form
@@ -51,7 +53,7 @@ export function AnswerNotFound() {
         name: "",
         phone: "",
         comment: "",
-        source: "answer_not_found",
+        source: "delivery_page",
       });
 
       // Show success message
@@ -70,7 +72,7 @@ export function AnswerNotFound() {
     <main className="bg-zinc-100 w-full pb-20">
       <Container className="">
         <div className="bg-[#1A1A1A] py-16">
-          <div className="px-5 md:px-20 flex flex-col lg:flex-row justify-between gap-10 lg:gap-20 ">
+          <div className="px-5 md:px-20 flex flex-col lg:flex-row justify-between gap-10 lg:gap-20">
             {/* Header Section */}
             <motion.header
               initial={{ opacity: 0, y: -20 }}
@@ -88,12 +90,12 @@ export function AnswerNotFound() {
                   className="w-[46px]"
                 />
                 <h1 className="text-4xl lg:text-5xl font-bold text-white uppercase">
-                  Не нашли своего производителя?
+                  ВОЗНИКЛИ ВОПРОСЫ ПО ДОСТАВКЕ ИЛИ ОПЛАТЕ?
                 </h1>
               </div>
               <p className="text-2xl lg:text-3xl text-white mt-10 lg:mt-20 font-normal">
-                По другим брендам и производителям оставляйте запрос в данной
-                форме
+                Наши специалисты всегда готовы помочь и предоставить необходимую
+                консультацию по телефонам
               </p>
             </motion.header>
 
@@ -111,18 +113,8 @@ export function AnswerNotFound() {
                     <div key={index} className="flex-1">
                       <FormInput
                         label={field.label}
-                        name={
-                          field.label.toLowerCase() === "номер телефона"
-                            ? "phone"
-                            : "name"
-                        }
-                        value={
-                          formData[
-                            field.label.toLowerCase() === "номер телефона"
-                              ? "phone"
-                              : "name"
-                          ]
-                        }
+                        name={field.name}
+                        value={formData[field.name]}
                         onChange={handleChange}
                         placeholder={field.placeholder}
                         required={field.required}
@@ -173,3 +165,5 @@ export function AnswerNotFound() {
     </main>
   );
 }
+
+export default DeliveryForm;
