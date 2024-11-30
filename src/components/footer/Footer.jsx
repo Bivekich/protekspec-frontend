@@ -17,6 +17,7 @@ const Footer = () => {
     { text: "Гарантия", path: "/warranty" },
     // { text: "Статьи", path: "/articles" },
     { text: "Доставка и оплата", path: "/PaymentandDelivery" },
+    { text: "Бренды", path: "/brands" },
     { text: "Контакты", path: "/contact" },
   ];
 
