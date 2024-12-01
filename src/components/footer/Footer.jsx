@@ -145,7 +145,7 @@ const Footer = () => {
             <Link
               to="/userpolicy"
               onClick={handlePolicyClick}
-              className="mt-2 inline-block hover:text-[#FAC612] text-sm text-gray-800 transition-colors"
+              className="mt-2 inline-block hover:text-[#FAC612] text-md text-gray-800 transition-colors"
             >
               Пользовательское соглашение
             </Link>
@@ -228,7 +228,7 @@ const Footer = () => {
             <Link
               to="/userpolicy"
               onClick={handlePolicyClick}
-              className="mt-4 inline-block hover:text-[#FAC612] text-lg text-gray-900 font-semibold transition-colors"
+              className="mt-4 inline-block hover:text-[#FAC612] text-md text-gray-900 font-semibold transition-colors"
             >
               Пользовательское соглашение
             </Link>
