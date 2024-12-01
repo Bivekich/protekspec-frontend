@@ -92,7 +92,7 @@ export function ImageSliderSection() {
   }
 
   return (
-    <div className="w-full bg-[#F5F5F5] overflow-x-hidden">
+    <div className="w-full bg-[#F5F5F5] overflow-x-hidden pb-20">
       <motion.main
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
@@ -131,7 +131,7 @@ export function ImageSliderSection() {
             </div>
           </section>
 
-          <div className="relative w-full lg:w-[130%] h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden mt-5">
+          <div className="relative w-full lg:w-[130%] h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden mt-5">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={page}
@@ -152,17 +152,17 @@ export function ImageSliderSection() {
                         .src
                     }
                     alt="Previous"
-                    className="w-1/4 h-[570px] object-cover rounded-md"
+                    className="w-1/4 h-[470px] object-cover rounded-md"
                   />
                   <img
                     src={images[imageIndex].src}
                     alt={images[imageIndex].alt}
-                    className="w-1/2 h-[700px] object-cover rounded-md"
+                    className="w-1/2 h-[600px] object-cover rounded-md"
                   />
                   <img
                     src={images[(imageIndex + 1) % images.length].src}
                     alt="Next"
-                    className="w-1/4 h-[570px] object-cover rounded-md"
+                    className="w-1/4 h-[470px] object-cover rounded-md"
                   />
                 </div>
 

@@ -57,9 +57,9 @@ function AppContent() {
           <>
             <Navbar />
             <AboutUsPage />
-            <ImageSliderSection />
             <AdvantagesSection />
-            <CertificatesSection />
+            <ImageSliderSection />
+            {/* <CertificatesSection /> */}
             <Contact />
             <Footer />
           </>
