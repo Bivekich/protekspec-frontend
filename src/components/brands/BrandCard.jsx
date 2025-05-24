@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { getApiUrl } from "../../utils/env";
 
 export function BrandCard({ brand }) {
   const getImageUrl = (brand) => {
@@ -7,10 +8,10 @@ export function BrandCard({ brand }) {
       if (!logo) return null;
 
       const imageUrl = logo.url;
-      if (imageUrl?.startsWith("http")) {
-        return imageUrl;
+      if (imageUrl?.startsWith("/")) {
+        return getApiUrl(imageUrl);
       }
-      return `${import.meta.env.VITE_API_URL}${imageUrl}`;
+      return imageUrl;
     } catch (error) {
       console.error("Error getting image URL:", error);
       return null;

@@ -5,6 +5,7 @@ import { Container } from "../common/Container";
 import SectionTitle from "../aboutUs/SectionTitle";
 import { getBrands } from "../../services/api";
 import { PageTitle } from "../PageTitle";
+import { getApiUrl } from "../../utils/env";
 
 const containerVariants = {
   initial: { opacity: 0 },
@@ -27,7 +28,7 @@ export function BrandList() {
 
       const imageUrl = logo.url;
       if (imageUrl?.startsWith("/")) {
-        return `${import.meta.env.VITE_API_URL}${imageUrl}`;
+        return getApiUrl(imageUrl);
       }
       return imageUrl;
     } catch (error) {

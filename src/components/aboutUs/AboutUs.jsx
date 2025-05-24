@@ -5,6 +5,7 @@ import SectionTitle from "./SectionTitle";
 import { Container } from "../common/Container";
 import { motion } from "framer-motion";
 import { getAboutUs } from "../../services/api";
+import { getApiUrl } from "../../utils/env";
 
 function AboutUs() {
   const [aboutData, setAboutData] = useState(null);
@@ -56,7 +57,7 @@ function AboutUs() {
   const formatBrands = (images) => {
     if (!images) return [];
     return images.map((image) => ({
-      src: `${import.meta.env.VITE_API_URL}${image.url}`,
+      src: getApiUrl(image.url),
       alt: image.alternativeText || "",
       width: "100px",
       aspect: "3.24",
@@ -80,9 +81,7 @@ function AboutUs() {
         <motion.div initial="hidden" animate="show" variants={container}>
           <motion.div variants={item}>
             <SectionTitle
-              iconSrc={`${import.meta.env.VITE_API_URL}${
-                aboutData.titleIcon.url
-              }`}
+              iconSrc={getApiUrl(aboutData.titleIcon.url)}
               title={aboutData.title}
             />
           </motion.div>
@@ -125,9 +124,7 @@ function AboutUs() {
             <motion.div variants={item} className="flex-1 min-w-[240px]">
               {aboutData.bigImage && (
                 <img
-                  src={`${import.meta.env.VITE_API_URL}${
-                    aboutData.bigImage.url
-                  }`}
+                  src={getApiUrl(aboutData.bigImage.url)}
                   alt={aboutData.bigImage.alternativeText || "Tractor image"}
                   className="w-full h-auto object-cover rounded-lg"
                 />

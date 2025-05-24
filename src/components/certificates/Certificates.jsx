@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { Container } from "../common/Container";
 import SectionTitle from "../aboutUs/SectionTitle";
 import { getCertificates } from "../../services/api";
+import { getApiUrl } from "../../utils/env";
 
 export function CertificatesSection() {
   const ref = useRef(null);
@@ -22,7 +23,7 @@ export function CertificatesSection() {
 
             return cert.image.map((image) => ({
               id: image.id,
-              src: `${import.meta.env.VITE_API_URL}${image.url}`,
+              src: getApiUrl(image.url),
               alt: image.alternativeText || "Certificate image",
             }));
           });

@@ -7,6 +7,7 @@ import SectionTitle from "./SectionTitle";
 import { Container } from "../common/Container";
 import { getAboutUs } from "../../services/api";
 import { PageTitle } from "../PageTitle";
+import { getApiUrl } from "../../utils/env";
 
 function AboutUs() {
   const ref = useRef(null);
@@ -59,7 +60,7 @@ function AboutUs() {
   const formatBrands = (images) => {
     if (!images) return [];
     return images.map((image) => ({
-      src: `${import.meta.env.VITE_API_URL}${image.url}`,
+      src: getApiUrl(image.url),
       alt: image.alternativeText || "",
       width: "100px",
       aspect: "3.24",
@@ -91,9 +92,7 @@ function AboutUs() {
 
           <motion.div variants={item}>
             <SectionTitle
-              iconSrc={`${import.meta.env.VITE_API_URL}${
-                aboutData.titleIcon.url
-              }`}
+              iconSrc={getApiUrl(aboutData.titleIcon.url)}
               title={aboutData.title}
             />
           </motion.div>

@@ -37,6 +37,8 @@ RUN echo '#!/bin/sh' > /app/entrypoint.sh && \
     echo 'echo "VITE_API_TOKEN: [hidden for security]"' >> /app/entrypoint.sh && \
     echo 'echo "VITE_TELEGRAM_BOT_TOKEN: [hidden for security]"' >> /app/entrypoint.sh && \
     echo 'echo "VITE_TELEGRAM_CHAT_ID: $VITE_TELEGRAM_CHAT_ID"' >> /app/entrypoint.sh && \
+    echo 'echo "Generated env-config.js content:"' >> /app/entrypoint.sh && \
+    echo 'cat /app/dist/env-config.js' >> /app/entrypoint.sh && \
     echo 'exec npm run preview -- --host 0.0.0.0' >> /app/entrypoint.sh && \
     chmod +x /app/entrypoint.sh
 

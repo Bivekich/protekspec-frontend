@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getSliderImages } from "../services/api";
 import { useRef } from "react";
+import { getApiUrl } from "../utils/env";
 
 const slideVariants = {
   enter: (direction) => ({
@@ -48,7 +49,7 @@ export function ImageSliderSection() {
             }
 
             const imageSet = item.slider.map((image) => ({
-              src: `${import.meta.env.VITE_API_URL}${image.url}`,
+              src: getApiUrl(image.url),
               alt: image.alternativeText || "Slider image",
             }));
             return [...acc, ...imageSet];

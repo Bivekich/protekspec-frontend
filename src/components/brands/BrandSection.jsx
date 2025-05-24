@@ -3,6 +3,7 @@ import { getBrands } from "../../services/api";
 import { motion } from "framer-motion";
 import { Container } from "../common/Container";
 import { useNavigate } from "react-router-dom";
+import { getApiUrl } from "../../utils/env";
 
 export function BrandSection() {
   const [brands, setBrands] = useState([]);
@@ -16,7 +17,7 @@ export function BrandSection() {
 
       const imageUrl = logo.url;
       if (imageUrl?.startsWith("/")) {
-        return `${import.meta.env.VITE_API_URL}${imageUrl}`;
+        return getApiUrl(imageUrl);
       }
       return imageUrl;
     } catch (error) {
