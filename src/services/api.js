@@ -1,9 +1,10 @@
 import axios from "axios";
+import { getEnv } from "../utils/env";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: getEnv("VITE_API_URL"),
   headers: {
-    Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
+    Authorization: `Bearer ${getEnv("VITE_API_TOKEN")}`,
     "Content-Type": "application/json",
   },
 });
@@ -141,8 +142,8 @@ export const getPaymentAndDelivery = async () => {
 
 export const submitContactForm = async (formData) => {
   try {
-    const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
-    const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+    const botToken = getEnv("VITE_TELEGRAM_BOT_TOKEN");
+    const chatId = getEnv("VITE_TELEGRAM_CHAT_ID");
 
     const message = `
 📋 Новая заявка с сайта

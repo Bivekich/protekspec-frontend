@@ -9,5 +9,17 @@ services:
     restart: unless-stopped
     ports:
       - "3010:4173"
+    environment:
+      - VITE_API_URL=${VITE_API_URL}
+      - VITE_API_TOKEN=${VITE_API_TOKEN}
+      - VITE_TELEGRAM_BOT_TOKEN=${VITE_TELEGRAM_BOT_TOKEN}
+      - VITE_TELEGRAM_CHAT_ID=${VITE_TELEGRAM_CHAT_ID}
     env_file:
-      - .env 
+      - stack.env
+    command: sh -c "echo '=== ENV CHECK ===' && 
+             echo VITE_API_URL=$${VITE_API_URL} && 
+             echo VITE_API_TOKEN=*hidden* && 
+             echo VITE_TELEGRAM_BOT_TOKEN=*hidden* && 
+             echo VITE_TELEGRAM_CHAT_ID=$${VITE_TELEGRAM_CHAT_ID} && 
+             echo '================' && 
+             /app/entrypoint.sh" 

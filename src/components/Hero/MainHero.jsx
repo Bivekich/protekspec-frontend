@@ -1,5 +1,6 @@
 import { useData } from "../../context/DataContext";
 import { HeroSection } from "./HeroSection";
+import { getApiUrl } from "../../utils/env";
 
 export const MainHero = () => {
   const { globalData } = useData();
@@ -17,9 +18,7 @@ export const MainHero = () => {
   return (
     <HeroSection
       title={heroData.title}
-      backgroundImage={`${import.meta.env.VITE_API_URL}${
-        heroData.backgroundImage.url
-      }`}
+      backgroundImage={getApiUrl(heroData.backgroundImage.url)}
     />
   );
 };

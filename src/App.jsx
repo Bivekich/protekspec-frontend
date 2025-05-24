@@ -13,7 +13,7 @@ import { Divider } from "./components/Divider";
 import { BenefitsSection } from "./components/benefits/BenefitsSection";
 import AboutUsPage from "./components/aboutUs/AboutUsImage";
 import { AdvantagesSection } from "./components/advantages/AdvantagesSection";
-import { CertificatesSection } from "./components/certificates/Certificates";
+// import { CertificatesSection } from "./components/certificates/Certificates";
 import { ImageSliderSection } from "./components/ImageSlider";
 import { ContactInfo } from "./components/contactInfo/ContactInfo";
 import { ContactForm } from "./components/contactForm/ContactForm";
@@ -26,100 +26,104 @@ import { DataProvider } from "./context/DataContext";
 import { useFetchData } from "./hooks/useFetchData";
 import { usePageTransition } from "./hooks/usePageTransition";
 import DeliveryForm from "./components/delivery/DeliveryForm";
+import { EnvDebug } from "./components/common/EnvDebug";
 
 function AppContent() {
   useFetchData();
   usePageTransition();
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            {" "}
-            <Navbar />
-            <MainHero />
-            <BenefitsSection />
-            <AboutUs />
-            <HelpForm />
-            <BrandSection />
-            <Divider />
-            {/* <ArticlesSection/> */}
-            <Contact />
-            <Footer />
-          </>
-        }
-      />
-      <Route
-        path="/About"
-        element={
-          <>
-            <Navbar />
-            <AboutUsPage />
-            <AdvantagesSection />
-            <ImageSliderSection />
-            {/* <CertificatesSection /> */}
-            <Contact />
-            <Footer />
-          </>
-        }
-      />
-      <Route
-        path="/Contact"
-        element={
-          <>
-            <Navbar />
-            <ContactInfo />
-            <ContactForm />
-            <Footer />
-          </>
-        }
-      />
-      <Route
-        path="/Warranty"
-        element={
-          <>
-            <Navbar />
-            <Warranty />
-            <ContactForm />
-            <Footer />
-          </>
-        }
-      />
-      <Route
-        path="/Brands"
-        element={
-          <>
-            <Navbar />
-            <BrandList />
-            <AnswerNotFound />
-            <Footer />
-          </>
-        }
-      />
-      <Route
-        path="/UserPolicy"
-        element={
-          <>
-            <Navbar />
-            <PolicySection />
-            <Footer />
-          </>
-        }
-      />
-      <Route
-        path="/PaymentandDelivery"
-        element={
-          <>
-            <Navbar />
-            <PaymentSection />
-            <DeliveryForm />
-            <Footer />
-          </>
-        }
-      />
-    </Routes>
+    <>
+      <EnvDebug />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              {" "}
+              <Navbar />
+              <MainHero />
+              <BenefitsSection />
+              <AboutUs />
+              <HelpForm />
+              <BrandSection />
+              <Divider />
+              {/* <ArticlesSection/> */}
+              <Contact />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/About"
+          element={
+            <>
+              <Navbar />
+              <AboutUsPage />
+              <AdvantagesSection />
+              <ImageSliderSection />
+              {/* <CertificatesSection /> */}
+              <Contact />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/Contact"
+          element={
+            <>
+              <Navbar />
+              <ContactInfo />
+              <ContactForm />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/Warranty"
+          element={
+            <>
+              <Navbar />
+              <Warranty />
+              <ContactForm />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/Brands"
+          element={
+            <>
+              <Navbar />
+              <BrandList />
+              <AnswerNotFound />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/UserPolicy"
+          element={
+            <>
+              <Navbar />
+              <PolicySection />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/PaymentandDelivery"
+          element={
+            <>
+              <Navbar />
+              <PaymentSection />
+              <DeliveryForm />
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
+    </>
   );
 }
 
