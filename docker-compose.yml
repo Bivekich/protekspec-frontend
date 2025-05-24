@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: protekspec-frontend
+    restart: unless-stopped
+    ports:
+      - "3010:4173"
+    environment:
+      - VITE_API_URL=${VITE_API_URL}
+      - VITE_API_TOKEN=${VITE_API_TOKEN}
+      - VITE_TELEGRAM_BOT_TOKEN=${VITE_TELEGRAM_BOT_TOKEN}
+      - VITE_TELEGRAM_CHAT_ID=${VITE_TELEGRAM_CHAT_ID}
+    env_file:
+      - stack.env 
