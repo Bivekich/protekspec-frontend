@@ -10,4 +10,4 @@ services:
     ports:
       - "3010:4173"
     env_file:
-      - stack.env 
+      - .env 
